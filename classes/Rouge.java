@@ -11,7 +11,7 @@ public class Rouge extends Character
         //TODO Auto-generated constructor stub
     }
 
-    private void dirtykick() 
+    private void dirtyKick() 
     {
         
     }
@@ -20,7 +20,7 @@ public class Rouge extends Character
     public void ability() 
     {
         // TODO Auto-generated method stub
-        dirtykick();
+        dirtyKick();
     }
 
     
