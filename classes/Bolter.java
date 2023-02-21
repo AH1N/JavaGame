@@ -2,23 +2,33 @@ package JavaGame.classes;
 
 import JavaGame.Character.Character;
 
-public class Bolter extends Character 
+
+public class Bolter extends Character
 {
-    
-    public Bolter(String name, float hp, float at, float def, float defModeficator) 
+
+    protected int arrow;
+
+    public Bolter(String name, String heroTip, float hp, float at, float def,float speed, float minDamage,
+            float maxDamage, int arrow) 
     {
-        super(name, hp, at, def, 7);
-        //TODO Auto-generated constructor stub
+        super("ЕгорСемёныч", "bolter", 10, 6, 3, 4, 2, 3);
+        this.arrow = 16;
+        getInfo();
     }
 
-    private void ignoreDef() 
-    {
-        
-    }
 
     @Override
-    public void ability() {
-        // TODO Auto-generated method stub
-        ignoreDef();
-    }    
+    public void getInfo() 
+    { 
+        System.out.println("hi I AM  " + this.heroTip); 
+    }
+    
+
+    @Override
+    public void step() {}
+
+    @Override
+    public void ability() {}
+    
 }
+

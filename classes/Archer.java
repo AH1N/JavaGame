@@ -1,50 +1,29 @@
 package JavaGame.classes;
 
 import JavaGame.Character.Character;
-// import JavaOOP.Weapon.Bow;
+
 
 public class Archer extends Character 
 {
-    // private Bow bow;
+    protected int arrow;
 
-    public Archer(String name, float hp, float at, float def, float defModeficator) 
+    public Archer(String name, String heroTip, float hp, float at, float def, float speed, float minDamage, float maxDamage, int arrow) 
     {
-        super(name, hp, at, def, 0);
-        //TODO Auto-generated constructor stub
+        super("Hawk", "Archer", 15, 12, 10, 9, 10, 8);
+        this.arrow = 32;  
+        getInfo();
     }
-
-
-    public float defence()
-    {
-        return 5;
-    }
-
-    public float shoot(float distanse)
-    {
-        if (distanse > 10) {
-            return sniperShoot();
-        }
-
-        return simpleShoot();
-    }
-
-    private float simpleShoot()
-    {
-        return 7;
-    }
-
-    private float sniperShoot()
-    {
-        return 15;
-    }
-
 
     @Override
-    public void ability() {
-        // TODO Auto-generated method stub
-        
+    public void getInfo() 
+    {
+        System.out.println("hi I AM  " + this.heroTip);  
     }
+    
+    @Override
+    public void ability() {}
 
-    
-    
+    @Override
+    public void step() {}
+   
 }

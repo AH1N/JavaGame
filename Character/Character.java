@@ -1,24 +1,31 @@
 package JavaGame.Character;
 
-import java_project.program;
+// import java_project.program;
 
-public abstract class Character 
+public abstract class Character implements CharacterInterface
 {
-    
+    protected String heroTip;
     protected String name;
     protected float hp;
     protected float at;
     protected float def;
-    protected float defModeficator;
+    protected float health;
+    protected float speed;
+    protected float maxDamage, minDamage;
 
-    public Character(String name, float hp2, float at2, float def2, float defModeficator) 
+    public Character(String name, String heroTip, float hp, float at, float def,float speed,float maxDamage, float minDamage) 
     {
+        this.heroTip = heroTip;
         this.name = name;
-        this.hp = hp2;
-        this.at = at2;
-        this.def = def2;
-        this.defModeficator = defModeficator + def2;
+        this.hp = hp;
+        this.at = at;
+        this.def = def;
+        this.speed = speed;
+        this.maxDamage = maxDamage;
+        this.minDamage = minDamage;   
     }
+
+    
 
     public String getName() {
         return this. name;
@@ -51,27 +58,6 @@ public abstract class Character
     public void setDef(float def) {
         this.def = def;
     }
-
-    public float getDefModeficator() {
-        return this. defModeficator;
-    }
-
-    public void setDefModeficator(float defModeficator) {
-        this.defModeficator = defModeficator;
-    }
-
-    abstract public void ability();
-
-
-    public void getDmage() 
-    {   
-        this.hp -= at - this.def;
-    }
- 
-    public void takeHeal(float hp, float heal) 
-    {
-        this.hp += heal;
-    }
-    
+  
 }
 

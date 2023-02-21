@@ -4,24 +4,25 @@ import JavaGame.Character.Character;
 
 public class Healer extends Character
 {
-    float heal;
+    protected int mana;
     
-    public Healer(String name, float hp, float at, float def, float defModeficator, float heal) 
+    public Healer(String name, String heroTip, float hp, float at, float def, float health, 
+                    float speed,float minDamage, float maxDamage, int mana) 
     {
-        super(name, hp, at, def, 10);
-        this.heal = heal;
-        //TODO Auto-generated constructor stub
+        super(name, heroTip, 30, 12, 7, 5, -4, -4);
+        this.mana = 1;
+        getInfo();
     }
  
-    static void Heal() 
+    @Override
+    public void getInfo() 
     {
-       
+        System.out.println("hi I AM  " + this.heroTip); 
     }
 
     @Override
-    public void ability() {
-        // TODO Auto-generated method stub
-        Heal(); 
-        
-    }
+    public void ability() {}
+
+    @Override
+    public void step() {}
 }

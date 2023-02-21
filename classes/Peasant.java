@@ -4,22 +4,30 @@ import JavaGame.Character.Character;
 
 public class Peasant extends Character 
 {
-    
-    public Peasant(String name, float hp, float at, float def, float defModeficator) {
-        super(name, hp, at, def, defModeficator);
-        //TODO Auto-generated constructor stub
+    int bringArrow;
+    public Peasant(String name, String heroTip, float hp, float at, float def,
+                     float speed,float maxDamage, float minDamage, int bringArrow) 
+    {
+        super("Foma", "Peasant", 1, 1, 1, 3, 1, 1);
+        this.bringArrow = 1; 
+        getInfo();
     }
 
-    private void bringarrows() 
+    private void bringarrows() {}
+
+    @Override
+    public void getInfo() 
     {
-        
+        System.out.println("hi I AM  " + this.heroTip);        
     }
 
     @Override
-    public void ability() {
-        // TODO Auto-generated method stub
+    public void ability() {  
         bringarrows();
     }
+
+    @Override
+    public void step() {}
 
    
 }   
