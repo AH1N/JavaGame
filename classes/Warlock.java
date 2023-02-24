@@ -1,37 +1,29 @@
-package JavaGame.classes;
+package classes;
 
-import java.security.GeneralSecurityException;
-import java.util.Random;
+import Game.Hero;
 
-import JavaGame.Character.Character;
-
-public class Warlock extends Character 
+public class Warlock extends Hero 
 {
     protected int mana;
 
-    public Warlock(String name, String heroTip, float hp, float at, float def, float speed, float minDamage, float maxDamage, int mana) 
+    public Warlock(String name, int x, int y,int team) 
     {
-        super("EdgarPoe", "Warlock", 30, 17, 12, 9, -5, -5);
+        super(17, 12, -5, -5, 30, 9,name,team);
         this.mana = 1;
         getInfo();
     }
 
     private void corRupt() {}
 
+ 
     @Override
-    public void getInfo() 
-    { 
-        System.out.println("hi I AM  " + this.heroTip);    
-    }
+    public void step() {}
 
     @Override
-    public void ability() 
-    {
+    public void ability() {
         corRupt();
-    }
-
-    @Override
-    public void step() {} 
+    } 
 
 
 }
+

@@ -1,33 +1,29 @@
-package JavaGame.classes;
+package classes;
 
-import JavaGame.Character.Character;
+import Game.Hero;
 
-public class Peasant extends Character 
+public class Peasant extends Hero 
 {
     int bringArrow;
-    public Peasant(String name, String heroTip, float hp, float at, float def,
-                     float speed,float maxDamage, float minDamage, int bringArrow) 
+    public Peasant(String name,int x, int y,int team) 
     {
-        super("Foma", "Peasant", 1, 1, 1, 3, 1, 1);
+        super(1,1, 1, 1, 1, 1,name,team);
         this.bringArrow = 1; 
         getInfo();
     }
 
-    private void bringarrows() {}
+    private void bringArrows() {}
 
-    @Override
-    public void getInfo() 
-    {
-        System.out.println("hi I AM  " + this.heroTip);        
-    }
-
-    @Override
-    public void ability() {  
-        bringarrows();
-    }
+    
 
     @Override
     public void step() {}
+
+    @Override
+    public void ability() {
+        bringArrows(); 
+  
+    }
 
    
 }   

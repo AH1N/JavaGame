@@ -1,34 +1,32 @@
-package JavaGame.classes;
+package classes;
 
-import JavaGame.Character.Character;
+import Game.Hero;
 
 
-public class Bolter extends Character
+public class Bolter extends Hero
 {
 
     protected int arrow;
 
-    public Bolter(String name, String heroTip, float hp, float at, float def,float speed, float minDamage,
-            float maxDamage, int arrow) 
+    public Bolter(String name, int x, int y, int team) 
     {
-        super("ЕгорСемёныч", "bolter", 10, 6, 3, 4, 2, 3);
+        super(6, 3, 2, 3, 10, 4, name,team);
         this.arrow = 16;
         getInfo();
     }
-
-
-    @Override
-    public void getInfo() 
-    { 
-        System.out.println("hi I AM  " + this.heroTip); 
-    }
     
+    private void chainShoot() {
+        
+    }
 
     @Override
     public void step() {}
 
     @Override
-    public void ability() {}
-    
+    public void ability() {
+        chainShoot();
+    }
+
+  
 }
 

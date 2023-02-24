@@ -1,29 +1,25 @@
-package JavaGame.classes;
+package classes;
 
-import JavaGame.Character.Character;
+import Game.Hero;
 
 
-public class Archer extends Character 
+public class Archer extends Hero
 {
     protected int arrow;
 
-    public Archer(String name, String heroTip, float hp, float at, float def, float speed, float minDamage, float maxDamage, int arrow) 
+    public Archer(String name, int x, int y,int team) 
     {
-        super("Hawk", "Archer", 15, 12, 10, 9, 10, 8);
+        super(12, 10, 8, 10, 15, 9,name,team);
         this.arrow = 32;  
         getInfo();
     }
 
-    @Override
-    public void getInfo() 
-    {
-        System.out.println("hi I AM  " + this.heroTip);  
-    }
-    
-    @Override
-    public void ability() {}
+    private void snipeShot() {}
 
     @Override
-    public void step() {}
-   
+    public void ability() {
+        snipeShot();
+    }
+
+ 
 }

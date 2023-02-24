@@ -1,31 +1,27 @@
-package JavaGame.classes;
+package classes;
 
-import JavaGame.Character.Character;
+import Game.Hero;
 
-public class Rouge extends Character 
+public class Rouge extends Hero 
 {
 
-    public Rouge(String name, String heroTip, float hp, float at, float def, float speed,float maxDamage, float minDamage) 
+    public Rouge(String name,int x, int y, int team) 
     {
-        super("Robin", "rogue", 10, 8, 3, 6, 4, 2);
+        super(8, 3, 2, 4, 10, 6,name,team);
+        
         getInfo();
     }
 
     private void dirtyKick() {}
 
-    @Override
-    public void getInfo() {
-        System.out.println("hi I AM  " + this.heroTip); 
-    }
-
-    @Override
-    public void ability() 
-    {
-        dirtyKick();
-    }
 
     @Override
     public void step() {}
+
+    @Override
+    public void ability() {
+        dirtyKick();
+    }
 
     
 }

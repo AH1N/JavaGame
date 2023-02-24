@@ -1,28 +1,26 @@
-package JavaGame.classes;
+package classes;
 
-import JavaGame.Character.Character;
+import Game.Hero;
 
-public class Healer extends Character
+public class Healer extends Hero
 {
     protected int mana;
     
-    public Healer(String name, String heroTip, float hp, float at, float def, float health, 
-                    float speed,float minDamage, float maxDamage, int mana) 
+    public Healer(String name, int x, int y,int team) 
     {
-        super(name, heroTip, 30, 12, 7, 5, -4, -4);
+        super(12, 7, -4, -4, 30, 5,name,team);
         this.mana = 1;
         getInfo();
     }
  
-    @Override
-    public void getInfo() 
-    {
-        System.out.println("hi I AM  " + this.heroTip); 
-    }
-
-    @Override
-    public void ability() {}
+    private void massHeal() {}
 
     @Override
     public void step() {}
+
+    @Override
+    public void ability() {
+        massHeal();
+    }
+    
 }
