@@ -1,6 +1,6 @@
 package Game;
-// import java.lang.Math;
-class Point
+
+public class Point
 
    {
         int x;
@@ -13,10 +13,12 @@ class Point
             this.y = y;
         }
 
-        public double range(Point pointA, Point pointB) 
+        public static double range(Point pointA, Point pointB) 
         {
             return Math.sqrt(Math.pow((pointA.x - pointB.x),2) + Math.pow((pointA.y - pointB.y),2));
         }
+        
+        
 
         @Override
         public boolean equals(Object obj) 

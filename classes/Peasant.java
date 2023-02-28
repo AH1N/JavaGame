@@ -1,13 +1,16 @@
 package classes;
 
+import java.util.ArrayList;
+
 import Game.Hero;
+import Game.Point;
 
 public class Peasant extends Hero 
 {
     int bringArrow;
-    public Peasant(String name,int x, int y,int team) 
+    public Peasant(String name,int team, Point place) 
     {
-        super(1,1, 1, 1, 1, 1,name,team);
+        super(1,1, 1, 1, 1, 1, name, team, place);
         this.bringArrow = 1; 
         getInfo();
     }
@@ -16,13 +19,22 @@ public class Peasant extends Hero
 
     
 
+ 
     @Override
-    public void step() {}
-
-    @Override
-    public void ability() {
+    public void ability(ArrayList<Hero> Warband) {
         bringArrows(); 
   
+    }
+
+    @Override
+    public void step(ArrayList<Hero> friendlyWarband, ArrayList<Hero> enemyWarband) {
+       
+    }
+
+    @Override
+    public void ability(Hero unit) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'ability'");
     }
 
    
