@@ -12,7 +12,7 @@ public abstract class Hero implements HeroInterface {
     protected float at;
     protected float def;
     protected int team;
-    protected Point place;
+    public Point place;
 
     
     public Hero(int at, int def, int Damage, int maxDamage, int hp, int speed,String name, int team, Point place) 
@@ -29,12 +29,19 @@ public abstract class Hero implements HeroInterface {
         this.place = place; 
     }
     
-    public void getInfo() {
-        System.out.println(this.name +" "+ this.hp + "\t" +"   ("+this.speed+ "Скорость)    " + "\t" + this.getClass().getSimpleName() +"\t" 
-        + "   Команда ->" + team + " позиция   (" + place.x + "," + place.y + ")" );//, this.getClass().getSimpleName());
-        // System.out.printf("Name: %s Health: %d Endurance: %d Speed: %d, maxDamage: %d, minDamage: %d",
-        // this.name, this.hp, this.speed, this.maxDamage, this.Damage, this.getClass().getSimpleName());         
+    public void getData () 
+    {
+        
     }
+
+    public StringBuilder getInfo() {
+        return new StringBuilder("");
+    }
+
+    public int[] getCoords() {return new int[]{place.x, place.y};}
+
+   
+
 
     public int rnd(int n) 
     { 

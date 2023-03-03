@@ -13,7 +13,12 @@ public class Healer extends Hero
     {
         super(12, 7, -4, -4, 30, 5, name, team, place);
         this.mana = 1;
-        getInfo();
+        getData();
+    }
+
+    @Override
+    public  void getData() {
+        System.out.println(this.name + "\t" + this.team +"\t" + getClass().getSimpleName());
     }
  
     private void massHeal(ArrayList<Hero> friendlyWarband) 
@@ -53,5 +58,15 @@ public class Healer extends Hero
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'ability'");
     }
+
+    @Override
+    public StringBuilder getInfo() {
+        StringBuilder builder = new StringBuilder();
+        return builder.append(getClass().getSimpleName()+"\t").append(this.name)
+                .append("\t| ATK:\t").append(this.at)
+                .append("\t| HP:\t").append(this.hp)
+                .append(" \t| MP:\t").append(this.mana)
+                .append("\t|").append("\t| (X.Y) : ").append(this.place.getX()).append(".").append(this.place.getY());
     
+    }
 }

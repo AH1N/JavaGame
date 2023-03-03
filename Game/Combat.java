@@ -3,7 +3,7 @@ package Game;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
-
+import java.util.Scanner;
 
 import classes.Peasant;
 import classes.Bolter;
@@ -17,17 +17,36 @@ import classes.Archer;
 
 
 public class Combat {
+    static final int UNITS = 10;
+    public static ArrayList<Hero> allTeam = new ArrayList<>();
+    public static ArrayList<Hero> holyTeam = new ArrayList<>();
+    public static ArrayList<Hero> darkTeam = new ArrayList<>();
     public static void main(String[] args) 
     {
-        ArrayList<Hero> WB1 = createWarBand(0);
-        System.out.println("-------------------------------------------");
-        ArrayList<Hero> WB2 = createWarBand(10);
-     
+        Scanner user_input = new Scanner(System.in);
+        System.out.print("Press Enter to begin.");
+        user_input.nextLine();
 
-        Game.Hero.isEnemy(WB1.get(0), WB2);
-        Game.Hero.isEnemy(WB2.get(0), WB1);
-        (WB1.get(0)).isAlive();
-        (WB2.get(0)).isAlive();
+        holyTeam = createWarBand(0);
+        darkTeam = createWarBand(10);
+        allTeam.addAll(holyTeam);
+        allTeam.addAll(darkTeam);
+
+        System.out.println("-------------------------------------------");
+        
+        // while (true){
+        //     View.view();
+        //     user_input.nextLine();
+        //     for (Hero hero: allTeam) {
+        //         if (holyTeam.contains(hero)) hero.step(holyTeam, darkTeam);
+        //         else hero.step(darkTeam, holyTeam);
+        //     }
+        // }
+    
+        // Game.Hero.isEnemy(holyTeam.get(0), darkTeam);
+        // Game.Hero.isEnemy(darkTeam.get(0), holyTeam);
+        // (holyTeam.get(0)).isAlive();
+        // (darkTeam.get(0)).isAlive();
 
     }
 
@@ -90,22 +109,5 @@ public class Combat {
         return Warband;
         
     }
-
-    // public static void isEnemy(Hero unit, ArrayList<Hero> Warband) 
-    // {
-        
-    //     for (Hero hero : Warband) 
-    //     {
-    //         if (unit.equals(hero))
-    //         {
-    //             System.out.println("КУДА СТРЕЛЯЕШЬ ГАД!!!");
-    //         } 
-    //         else
-    //         {
-    //             System.out.println(unit.name + unit.team + "  ВРАГ  " + hero.name + hero.team);
-    //         }
-    //     }
-       
-    // }
 
 }
